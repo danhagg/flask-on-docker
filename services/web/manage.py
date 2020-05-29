@@ -7,8 +7,11 @@ run and manage the app from the command line
 
 from flask.cli import FlaskGroup
 
-from project import app, db, User
+# from project import app, db, User, create_app
+from project import create_app
+from project.models import User, db
 
+app = create_app()
 # created a new FlaskGroup instance
 # Extends the normal CLI with commands related to Flask app
 cli = FlaskGroup(app)
